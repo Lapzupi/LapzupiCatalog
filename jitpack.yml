@@ -1,2 +1,3 @@
 install:
-  - ./gradlew publishToMavenLocal
+  - echo "Running a custom install command"
+  - gradle publishToMavenLocal
