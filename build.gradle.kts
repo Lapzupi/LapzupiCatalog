@@ -1,10 +1,12 @@
+import java.net.URI
+
 plugins {
     `maven-publish`
     `version-catalog`
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.1"
+version = "0.0.1-SNAPSHOT"
 
 catalog {
     versionCatalog {
@@ -53,6 +55,26 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["versionCatalog"])
+        }
+    }
+
+    repositories {
+        maven {
+            val releaseUri = URI.create("https://repo.codemc.io/repository/maven-releases/")
+            val snapshotUri = URI.create("https://repo.codemc.io/repository/maven-snapshots/")
+            val version: String = project.version as String
+
+            url = if (version.endsWith("SNAPSHOT")) snapshotUri else releaseUri
+
+            val mavenUsername =  System.getenv("GRADLE_PROJECT_MAVEN_USERNAME") ?: null
+            val mavenPassword =  System.getenv("GRADLE_PROJECT_MAVEN_PASSWORD") ?: null
+
+            if(mavenUsername != null && mavenPassword != null) {
+                credentials {
+                    username = mavenUsername
+                    password = mavenPassword
+                }
+            }
         }
     }
 }

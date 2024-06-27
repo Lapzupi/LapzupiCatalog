@@ -4,10 +4,6 @@ install:
   - ./gradlew publishMavenPublicationToMavenLocal
 
 artifacts:
-  paths:
-    # Include the .toml file in the published artifacts
-    - build/version-catalog/version-catalog.toml
-
-  # Where to publish the artifacts
-  target:
-    - $JITPACK_OUT
+  # Include the .toml file in the published artifacts
+  - build/version-catalog/version-catalog.toml
+  - build/publications/**
