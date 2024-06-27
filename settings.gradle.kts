@@ -1,2 +1,2 @@
-rootProject.name = "LapzupiCatalog"
+rootProject.name = "lapzupi-catalog"
 
