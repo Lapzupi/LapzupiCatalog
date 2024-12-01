@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.5"
+version = "0.0.6"
 
 catalog {
     versionCatalog {
@@ -51,7 +51,7 @@ catalog {
         library("bstats", "org.bstats:bstats-bukkit:3.1.0")
 
         plugin("shadow", "com.gradleup.shadow").version("8.3.5")
-        plugin("plugin-yml-bukkit", "net.minecrell.plugin-yml.bukkit").version("0.6.0")
+        plugin("bukkit-yml", "net.minecrell.plugin-yml.bukkit").version("0.6.0")
 
         library("mockbukkit", "com.github.seeseemelk:MockBukkit-v1.21:3.133.2")
 
