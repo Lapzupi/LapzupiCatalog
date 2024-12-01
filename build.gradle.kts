@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.2"
+version = "0.0.3"
 
 catalog {
     versionCatalog {
@@ -23,7 +23,7 @@ catalog {
         bundle("lapzupi-utils", listOf("lapzupi-config", "lapzupi-connection", "lapzupi-files"))
         library("lapzupi-config", "com.github.Lapzupi:LapzupiConfig:1.2.1")
         library("lapzupi-connection", "com.github.Lapzupi:LapzupiConnection:1.1.1")
-        library("lapzupi-files", "com.github.Lapzupi:LapzupiConfig:1.1.0")
+        library("lapzupi-files", "com.github.Lapzupi:LapzupiFiles:1.1.0")
 
         library("lapzupi-currency", "com.github.Lapzupi:LapzupiCurrency:1.3.2.1")
 
