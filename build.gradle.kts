@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.3"
+version = "0.0.4"
 
 catalog {
     versionCatalog {
@@ -15,7 +15,7 @@ catalog {
         library("placeholder-api", "me.clip:placeholderapi:2.11.6")
         library("commands-paper","co.aikar:acf-paper:0.5.1-SNAPSHOT") //deprecated, lets use CommandsAPI instead
         library("nbt-api", "de.tr7zw:item-nbt-api:2.14.0")
-        library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:4.0.2-beta-release-11")
+        library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:3.6.3-beta-14")
         library("triumph-gui", "dev.triumphteam:triumph-gui:3.1.10")
 
         library("caffeine", "com.github.ben-manes.caffeine:caffeine:3.1.8")
@@ -40,6 +40,7 @@ catalog {
         library("adventure-bukkit", "net.kyori:adventure-platform-bukkit:4.3.4")
         bundle("adventure", listOf("adventure-api", "adventure-minimessage", "adventure-bukkit"))
 
+        //included with lapzupi-config. But until we get the libraries loader working, we still need to download these
         version("configurate", "4.2.0-SNAPSHOT")
         library("configurate-hocon", "org.spongepowered","configurate-hocon").versionRef("configurate")
         library("configurate-gson", "org.spongepowered","configurate-gson").versionRef("configurate")
@@ -51,6 +52,13 @@ catalog {
 
         plugin("shadow", "com.gradleup.shadow").version("8.3.5")
         plugin("plugin-yml-bukkit", "net.minecrell.plugin-yml.bukkit").version("0.6.0")
+
+        library("mockbukkit", "com.github.seeseemelk:MockBukkit-v1.21:3.133.2")
+
+        version("junit", "5.11.3")
+        library("junit-jupiter-api", "org.junit.jupiter", "junit-jupiter-api").versionRef("junit")
+        library("junit-jupiter-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef("junit")
+        bundle("junit", listOf("junit-jupiter-api", "junit-jupiter-engine"))
     }
 }
 
