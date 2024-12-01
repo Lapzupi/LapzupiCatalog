@@ -6,29 +6,30 @@ plugins {
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.2"
 
 catalog {
     versionCatalog {
-        library("paper-api", "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
+        library("paper-api", "io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
         library("vault-api", "com.github.MilkBowl:VaultAPI:1.7.1")
         library("placeholder-api", "me.clip:placeholderapi:2.11.6")
-        library("commands-paper","co.aikar:acf-paper:0.5.1-SNAPSHOT")
-        library("nbt-api", "de.tr7zw:item-nbt-api:2.13.1")
-        library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:3.6.1")
+        library("commands-paper","co.aikar:acf-paper:0.5.1-SNAPSHOT") //deprecated, lets use CommandsAPI instead
+        library("nbt-api", "de.tr7zw:item-nbt-api:2.14.0")
+        library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:4.0.2-beta-release-11")
         library("triumph-gui", "dev.triumphteam:triumph-gui:3.1.10")
+
         library("caffeine", "com.github.ben-manes.caffeine:caffeine:3.1.8")
 
-        bundle("lapzupi-utils", listOf("lapzupi-config", "lapzupi-files", "lapzupi-connection"))
-        library("lapzupi-config","com.github.Lapzupi:LapzupiConfig:1.1.2")
-        library("lapzupi-files", "com.github.Lapzupi:LapzupiFiles:1.0.4")
-        library("lapzupi-connection", "com.github.Lapzupi:LapzupiFiles:1.0.4")
+        bundle("lapzupi-utils", listOf("lapzupi-config", "lapzupi-connection", "lapzupi-files"))
+        library("lapzupi-config", "com.github.Lapzupi:LapzupiConfig:1.2.1")
+        library("lapzupi-connection", "com.github.Lapzupi:LapzupiConnection:1.1.1")
+        library("lapzupi-files", "com.github.Lapzupi:LapzupiConfig:1.1.0")
 
-        library("lapzupi-currency", "com.github.Lapzupi:LapzupiCurrency:1.3.2.0")
+        library("lapzupi-currency", "com.github.Lapzupi:LapzupiCurrency:1.3.2.1")
 
-        library("more-paper-lib", "space.arim.morepaperlib:morepaperlib:0.4.3")
+        library("more-paper-lib", "space.arim.morepaperlib:morepaperlib:0.4.4")
 
-        version("flyway", "10.15.0")
+        version("flyway", "11.0.0")
         library("flyway-core", "org.flywaydb","flyway-core").versionRef("flyway")
         library("flyway-mysql", "org.flywaydb","flyway-mysql").versionRef("flyway")
         bundle("flyway", listOf("flyway-core", "flyway-mysql"))
@@ -36,16 +37,19 @@ catalog {
         version("adventure", "4.17.0")
         library("adventure-api", "net.kyori","adventure-api").versionRef("adventure")
         library("adventure-minimessage", "net.kyori", "adventure-text-minimessage").versionRef("adventure")
-        library("adventure-bukkit", "net.kyori:adventure-platform-bukkit:4.3.3")
+        library("adventure-bukkit", "net.kyori:adventure-platform-bukkit:4.3.4")
         bundle("adventure", listOf("adventure-api", "adventure-minimessage", "adventure-bukkit"))
 
-        library("configurate-yaml", "org.spongepowered:configurate-yaml:4.1.2")
-        library("configurate-hocon", "org.spongepowered:configurate-hocon:4.1.2")
+        version("configurate", "4.2.0-SNAPSHOT")
+        library("configurate-hocon", "org.spongepowered","configurate-hocon").versionRef("configurate")
+        library("configurate-gson", "org.spongepowered","configurate-gson").versionRef("configurate")
+        library("configurate-yaml", "org.spongepowered","configurate-yaml").versionRef("configurate")
+
         library("luckperms", "net.luckperms:api:5.4")
 
-        library("bstats", "org.bstats:bstats-bukkit:3.0.2")
+        library("bstats", "org.bstats:bstats-bukkit:3.1.0")
 
-        plugin("shadow", "io.github.goooler.shadow").version("8.1.7")
+        plugin("shadow", "com.gradleup.shadow").version("8.3.5")
         plugin("plugin-yml-bukkit", "net.minecrell.plugin-yml.bukkit").version("0.6.0")
     }
 }
