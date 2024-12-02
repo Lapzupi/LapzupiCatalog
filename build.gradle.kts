@@ -13,17 +13,21 @@ catalog {
         library("paper-api", "io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
         library("vault-api", "com.github.MilkBowl:VaultAPI:1.7.1")
         library("placeholder-api", "me.clip:placeholderapi:2.11.6")
+
         library("commands-paper","co.aikar:acf-paper:0.5.1-SNAPSHOT") //deprecated, lets use CommandsAPI instead
+        library("commands-api", "dev.jorel:commandapi-bukkit-core:9.6.0") //should be shaded
+
         library("nbt-api", "de.tr7zw:item-nbt-api:2.14.0")
         library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:3.6.3-beta-14")
         library("triumph-gui", "dev.triumphteam:triumph-gui:3.1.10")
 
         library("caffeine", "com.github.ben-manes.caffeine:caffeine:3.1.8")
 
-        bundle("lapzupi-utils", listOf("lapzupi-config", "lapzupi-connection", "lapzupi-files"))
+        bundle("lapzupi-utils", listOf("lapzupi-config", "lapzupi-connection", "lapzupi-files", "lapzupi-chat"))
         library("lapzupi-config", "com.github.Lapzupi:LapzupiConfig:1.2.1")
         library("lapzupi-connection", "com.github.Lapzupi:LapzupiConnection:1.1.1")
         library("lapzupi-files", "com.github.Lapzupi:LapzupiFiles:1.1.0")
+        library("lapzupi-chat", "com.github.Lapzupi:LapzupiFiles:1.0.1")
 
         library("lapzupi-currency", "com.github.Lapzupi:LapzupiCurrency:1.3.2.2")
 
