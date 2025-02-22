@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.lapzupi.dev"
-version = "0.0.7"
+version = "0.0.8"
 
 catalog {
     versionCatalog {
@@ -17,7 +17,7 @@ catalog {
         library("commands-paper","co.aikar:acf-paper:0.5.1-SNAPSHOT") //deprecated, lets use CommandsAPI instead
         library("commands-api", "dev.jorel:commandapi-bukkit-core:9.6.0") //should be shaded
 
-        library("nbt-api", "de.tr7zw:item-nbt-api:2.14.0")
+        library("nbt-api", "de.tr7zw:item-nbt-api:2.14.1")
         library("itemsadder-api", "com.github.LoneDev6:api-itemsadder:3.6.3-beta-14")
         library("triumph-gui", "dev.triumphteam:triumph-gui:3.1.10")
 
@@ -54,8 +54,10 @@ catalog {
 
         library("bstats", "org.bstats:bstats-bukkit:3.1.0")
 
-        plugin("shadow", "com.gradleup.shadow").version("8.3.5")
+        plugin("shadow", "com.gradleup.shadow").version("9.0.0-beta4")
         plugin("bukkit-yml", "net.minecrell.plugin-yml.bukkit").version("0.6.0")
+        plugin("paper-userdev", "io.papermc.paperweight.userdev").version("1.7.7")
+        plugin("run-paper", "xyz.jpenilla.run-paper").version("2.3.1")
 
         library("mockbukkit", "com.github.seeseemelk:MockBukkit-v1.21:3.133.2")
 
